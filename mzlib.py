@@ -653,11 +653,11 @@ class RawData( object ):
 				polarity = '+'
 			else:
 				polarity = '-'
-			out.write( "%f,%d,%d,%d,%s,%s,%d," % 
+			out.write( "%f,%d,%d,%d,%s,%s,%d" % 
 								( scan[ 'retentionTime' ], 1, 1, 1, polarity, "peak", 
 								len( scan[ 'mzArray' ])))
 			for point in zip( scan[ 'mzArray' ], scan[ 'intensityArray' ]):
-				out.write( '%f,%f,' % point )
+				out.write( ',%f,%f' % point )
 			out.write( "\n" )
 		out.close( )
 			
